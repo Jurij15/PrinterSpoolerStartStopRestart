@@ -14,8 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
-using PrinterSpoolerStartStopRestart;
 using ModernWpf;
+using PrinterSpoolerStartStopRestart.PrinterSpoolerClasses;
 
 namespace PrinterSpoolerStartStopRestart
 {
@@ -31,17 +31,20 @@ namespace PrinterSpoolerStartStopRestart
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            Start start = new Start();
+            start.StartExecute();
         }
 
         private void StopBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Stop stop = new Stop();
+            stop.StopExecute();
         }
 
         private void RestartBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Restart restart = new Restart();
+            restart.ExecuteRestart();
         }
     }
 }
