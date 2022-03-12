@@ -4,9 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrinterSpoolerStartStopRestart"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="277">
-    <Grid>
+        Title="PrinterSpooler" Height="298" Width="343">
+    <ui:SimpleStackPanel Margin="12" Spacing="24">
+        <TextBlock Margin="78,0,78,-42" FontSize="24" Text="Printer Spooler" />
+        <Button Click="StartBtn_Click" x:Name="StartBtn" Content="Start" Margin="0,73,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" />
+        <Button Click="StopBtn_Click" x:Name="StopBtn" Content="Stop" Margin="0,-19,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" />
+        <Button Click="RestartBtn_Click" x:Name="RestartBtn" Content="Restart"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" Margin="0,-19,0,0" />
 
-    </Grid>
+        <ui:ContentDialog/>
+    </ui:SimpleStackPanel>
 </Window>

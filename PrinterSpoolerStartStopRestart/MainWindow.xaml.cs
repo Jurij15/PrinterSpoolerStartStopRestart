@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Diagnostics;
+using PrinterSpoolerStartStopRestart;
+using ModernWpf;
 
 namespace PrinterSpoolerStartStopRestart
 {
@@ -23,6 +27,21 @@ namespace PrinterSpoolerStartStopRestart
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void StartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void StopBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RestartBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
