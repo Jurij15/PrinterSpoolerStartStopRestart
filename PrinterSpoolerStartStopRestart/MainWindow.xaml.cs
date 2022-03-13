@@ -36,7 +36,7 @@ namespace PrinterSpoolerStartStopRestart
             //execute start
             start.StartExecute();
         }
-
+        //net5.0-windows10.0.19041.0
         private void StopBtn_Click(object sender, RoutedEventArgs e)
         {
             //initialize stop class
@@ -51,6 +51,11 @@ namespace PrinterSpoolerStartStopRestart
             Restart restart = new Restart();
             //execute restart
             restart.ExecuteRestart();
+        }
+
+        private void OpenGitHub_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

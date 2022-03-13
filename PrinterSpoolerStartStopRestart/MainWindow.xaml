@@ -7,12 +7,14 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
-        Title="PrinterSpooler" Height="298" Width="343">
+        Title="PrinterSpooler" Height="298" Width="343" ResizeMode="CanMinimize">
     <ui:SimpleStackPanel Margin="12" Spacing="24">
         <TextBlock Margin="78,0,78,-42" FontSize="24" Text="Printer Spooler" />
-        <Button Click="StartBtn_Click" x:Name="StartBtn" Content="Start" Margin="0,73,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" />
-        <Button Click="StopBtn_Click" x:Name="StopBtn" Content="Stop" Margin="0,-19,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" />
-        <Button Click="RestartBtn_Click" x:Name="RestartBtn" Content="Restart"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" Margin="0,-19,0,0" />
+        <TextBlock Margin="113,5,113,-23" FontSize="12" Text="Made by Jurij15" />
+        <Button x:Name="OpenGitHub" Click="OpenGitHub_Click" Content="Open on GitHub" Margin="0,4,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="140" Height="33" />
+        <Button Click="StartBtn_Click" x:Name="StartBtn" Content="Start" Margin="0,-19,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" />
+        <Button Click="StopBtn_Click" x:Name="StopBtn" Content="Stop" Margin="0,-14,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" />
+        <Button Click="RestartBtn_Click" x:Name="RestartBtn" Content="Restart" HorizontalAlignment="Center" Width="299" Height="44" Margin="0,-14,0,0" VerticalAlignment="Top" />
 
         <ui:ContentDialog/>
     </ui:SimpleStackPanel>
