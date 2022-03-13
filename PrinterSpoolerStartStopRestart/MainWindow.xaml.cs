@@ -55,7 +55,11 @@ namespace PrinterSpoolerStartStopRestart
 
         private void OpenGitHub_Click(object sender, RoutedEventArgs e)
         {
-
+            var uri = "https://github.com/Jurij15/PrinterSpoolerStartStopRestart";
+            var psi = new System.Diagnostics.ProcessStartInfo();
+            psi.UseShellExecute = true;
+            psi.FileName = uri;
+            System.Diagnostics.Process.Start(psi);
         }
     }
 }
