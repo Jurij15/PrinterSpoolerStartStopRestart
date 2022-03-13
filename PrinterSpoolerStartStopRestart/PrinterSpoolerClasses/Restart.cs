@@ -12,10 +12,16 @@ namespace PrinterSpoolerStartStopRestart.PrinterSpoolerClasses
     {
         public void ExecuteRestart()
         {
+            ///the first command(to stop)
+            //command string
             string command = "/C net stop spooler";
+            //start cmd with command
             Process.Start("cmd.exe", command);
 
+            ///the second command (to start back up)
+            //command string
             string command2 = "/C net start spooler";
+            //start cmd with command
             Process.Start("cmd.exe", command2);
         }
     }

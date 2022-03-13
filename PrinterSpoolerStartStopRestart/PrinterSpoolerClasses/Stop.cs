@@ -13,20 +13,10 @@ namespace PrinterSpoolerStartStopRestart.PrinterSpoolerClasses
     {
         public void StopExecute()
         {
-            try
-            {
-                System.Diagnostics.Process process = new System.Diagnostics.Process();
-                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C net stop spooler";
-                startInfo.Verb = "runas";
-                process.StartInfo = startInfo;
-                process.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //command string
+            string command = "/C net stop spooler";
+            //start cmd with command
+            Process.Start("cmd.exe", command);
         }
     }
 }

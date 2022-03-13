@@ -31,19 +31,25 @@ namespace PrinterSpoolerStartStopRestart
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
+            //initialize start class
             Start start = new Start();
+            //execute start
             start.StartExecute();
         }
 
         private void StopBtn_Click(object sender, RoutedEventArgs e)
         {
+            //initialize stop class
             Stop stop = new Stop();
+            //execute stop
             stop.StopExecute();
         }
 
         private void RestartBtn_Click(object sender, RoutedEventArgs e)
         {
+            //initialize restart class
             Restart restart = new Restart();
+            //execute restart
             restart.ExecuteRestart();
         }
     }
