@@ -1,21 +1,26 @@
-﻿<Window x:Class="PrinterSpoolerStartStopRestart.MainWindow"
+﻿<ui:UiWindow x:Class="PrinterSpoolerStartStopRestart.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrinterSpoolerStartStopRestart"
-        xmlns:ui="http://schemas.modernwpf.com/2019"
-        ui:WindowHelper.UseModernWindowStyle="True"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
-        Title="PrinterSpooler" Height="298" Width="343" ResizeMode="CanMinimize">
-    <ui:SimpleStackPanel Margin="12" Spacing="24">
-        <TextBlock Margin="78,0,78,-42" FontSize="24" Text="Printer Spooler" />
-        <TextBlock Margin="113,5,113,-23" FontSize="12" Text="Made by Jurij15" />
-        <Button x:Name="OpenGitHub" Click="OpenGitHub_Click" Content="Open on GitHub" Margin="0,4,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="140" Height="33" />
-        <Button Click="StartBtn_Click" x:Name="StartBtn" Content="Start" Margin="0,-19,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" />
-        <Button Click="StopBtn_Click" x:Name="StopBtn" Content="Stop" Margin="0,-14,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="299" Height="44" />
-        <Button Click="RestartBtn_Click" x:Name="RestartBtn" Content="Restart" HorizontalAlignment="Center" Width="299" Height="44" Margin="0,-14,0,0" VerticalAlignment="Top" />
-
-        <ui:ContentDialog/>
-    </ui:SimpleStackPanel>
-</Window>
+             ExtendsContentIntoTitleBar="True"
+             WindowStartupLocation="CenterScreen" WindowBackdropType="Tabbed"
+        Title="PrinterSpooler" Height="460" Width="455" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ui:TitleBar Title="Printer Spooler" UseSnapLayout="True" Icon="/printer-icon-1-big-256.png"/>
+    </Grid>
+</ui:UiWindow>
