@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
 using Wpf.Ui;
-using PrinterSpoolerStartStopRestart.PrinterSpoolerClasses;
 using Wpf.Ui.Controls;
 
 namespace PrinterSpoolerStartStopRestart
@@ -25,42 +24,26 @@ namespace PrinterSpoolerStartStopRestart
     /// </summary>
     public partial class MainWindow : UiWindow
     {
+        public static Snackbar StatusSnack { get; set; }
+
+        public static async void ShowSnackbar(string Header, string Content, Wpf.Ui.Common.ControlAppearance Appearance)
+        {
+            //StatusSnack.Title = Header;
+            StatusSnack.Content = Content;
+            StatusSnack.Appearance = Appearance;
+            StatusSnack.Timeout = 2000;
+
+            StatusSnack.Visibility = Visibility.Visible;
+
+            await StatusSnack.ShowAsync();
+
+            StatusSnack.Visibility= Visibility.Collapsed;
+        }
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        private void StartBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //initialize start class
-            Start start = new Start();
-            //execute start
-            start.StartExecute();
-        }
-        //net5.0-windows10.0.19041.0
-        private void StopBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //initialize stop class
-            Stop stop = new Stop();
-            //execute stop
-            stop.StopExecute();
-        }
-
-        private void RestartBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //initialize restart class
-            Restart restart = new Restart();
-            //execute restart
-            restart.ExecuteRestart();
-        }
-
-        private void OpenGitHub_Click(object sender, RoutedEventArgs e)
-        {
-            var uri = "https://github.com/Jurij15/PrinterSpoolerStartStopRestart";
-            var psi = new System.Diagnostics.ProcessStartInfo();
-            psi.UseShellExecute = true;
-            psi.FileName = uri;
-            System.Diagnostics.Process.Start(psi);
+            StatusSnack = ContentSnack;
         }
     }
 }
