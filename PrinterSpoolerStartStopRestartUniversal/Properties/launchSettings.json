@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PrinterSpoolerStartStopRestartUniversal (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PrinterSpoolerStartStopRestartUniversal (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

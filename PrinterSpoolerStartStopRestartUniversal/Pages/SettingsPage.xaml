@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="PrinterSpoolerStartStopRestartUniversal.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PrinterSpoolerStartStopRestartUniversal.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid Margin="58, 42, 58,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="ThemeCard"
+              Grid.Row="1"
+              Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderBrush="{ThemeResource CardStrokeColorDefault}"
+              BorderThickness="1"
+              CornerRadius="4"
+              Margin="0,0,0,4">
+            <StackPanel x:Name="CardDescriptionPanel" HorizontalAlignment="Left" Margin="20">
+                <TextBlock Text="Theme" FontSize="14" FontWeight="SemiBold"/>
+                <TextBlock Text="Control App Theme (BETA)" Foreground="{ThemeResource TextFillColorSecondaryBrush}" FontSize="13"/>
+            </StackPanel>
+
+            <StackPanel x:Name="CardContentPanel" HorizontalAlignment="Right" Margin="20" VerticalAlignment="Center">
+                <ComboBox x:Name="ThemeComboBox" SelectionChanged="ThemeComboBox_SelectionChanged">
+                    <ComboBoxItem x:Name="DarkCombo" Content="Dark"/>
+                    <ComboBoxItem x:Name="LightCombo" Content="Light"/>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+        <Expander Grid.Row="2" HorizontalAlignment="Stretch">
+            <Expander.Header>
+                <StackPanel Orientation="Horizontal">
+                    <ImageIcon Source="/Assets/printer-icon.png"/>
+                    <StackPanel>
+                        <TextBlock Text="Printer Spooler Helper" FontSize="15" FontWeight="Medium"/>
+                        <TextBlock Text="by Jurij15" FontSize="13" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Expander.Header>
+            <StackPanel>
+                <TextBlock Text="Version" x:Name="VersionBlock"/>
+                <HyperlinkButton NavigateUri="https://github.com/Jurij15/PrinterSpoolerStartStopRestart" Content="GitHub"/>
+            </StackPanel>
+        </Expander>
+    </Grid>
+</Page>

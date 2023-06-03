@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="PrinterSpoolerStartStopRestartUniversal.Pages.PrintSpoolerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PrinterSpoolerStartStopRestartUniversal.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid Margin="58, 42, 58,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <InfoBar x:Name="StatusBar" Grid.Row="4"/>
+        <Grid x:Name="StatusCard"
+              Grid.Row="5"
+              Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderBrush="{ThemeResource CardStrokeColorDefault}"
+              BorderThickness="1"
+              CornerRadius="4">
+            <StackPanel Name="CardDescriptionPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
+                <TextBlock Text="Current Status" FontSize="14" FontWeight="SemiBold"/>
+            </StackPanel>
+            <StackPanel Name="CardContentPanel" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20">
+                <StackPanel x:Name="NotRunningStatus" Orientation="Horizontal" Visibility="Collapsed">
+                    <InfoBadge Style="{ThemeResource CriticalIconInfoBadgeStyle}" x:Name="NotRunningStatusDot"/>
+                    <TextBlock Text="Not Running" Style="{ThemeResource BodyTextBlockStyle}" Margin="4,0,0,0"/>
+                </StackPanel>
+                <StackPanel x:Name="RunningStatus" Orientation="Horizontal" Visibility="Visible">
+                    <InfoBadge Style="{ThemeResource SuccessIconInfoBadgeStyle}" x:Name="RunningStatusDot"/>
+                    <TextBlock Text="Running" Style="{ThemeResource BodyTextBlockStyle}" Margin="4,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="OptionsCard"
+              Grid.Row="6"
+              Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderBrush="{ThemeResource CardStrokeColorDefault}"
+              BorderThickness="1"
+              CornerRadius="4">
+            <StackPanel x:Name="OptionsCardContent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
+                <TextBlock Text="Options" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Top" Margin="0,0,0,4"/>
+                <Button x:Name="StartSpoolerBtn" Margin="0,2,0,2" Click="StartSpoolerBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Play"/>
+                        <TextBlock Text="Start" Margin="2,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="StopSpoolerBtn" Margin="0,2,0,2" Click="StopSpoolerBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Stop"/>
+                        <TextBlock Text="Stop" Margin="2,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="RestartSpoolerBtn" Margin="0,2,0,2" Click="RestartSpoolerBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Refresh"/>
+                        <TextBlock Text="Restart"  Margin="2,0,0,0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
